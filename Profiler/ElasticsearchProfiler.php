@@ -198,4 +198,16 @@ class ElasticsearchProfiler implements DataCollectorInterface
 
         return empty($route) ? self::UNDEFINED_ROUTE : $route;
     }
+
+    /**
+     * Resets this data collector to its initial state.
+     */
+    public function reset()
+    {
+        foreach ($this->loggers as $logger) {
+            if ($logger && method_exists($logger, 'clear')) {
+                $logger->clear();
+            }
+        }
+    }
 }
