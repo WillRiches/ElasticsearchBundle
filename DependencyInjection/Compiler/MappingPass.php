@@ -51,6 +51,8 @@ class MappingPass implements CompilerPassInterface
                 ]
             );
 
+            $managerDefinition->setPublic(true);
+
             $container->setDefinition(sprintf('es.manager.%s', $managerName), $managerDefinition);
 
             // Make es.manager.default as es.manager service.
