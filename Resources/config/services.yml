@@ -52,7 +52,7 @@ services:
             - [setManagers, ["%es.managers%"]]
             - [addLogger, ["@es.tracer"]]
         tags:
-            - {name: data_collector, template: "%es.profiler.template%", id: ongr.profiler}
+            - {name: data_collector, template: "@ONGRElasticsearch/Profiler/profiler.html.twig", id: ongr.profiler}
 
     es.result_converter:
         class: ONGR\ElasticsearchBundle\Result\Converter
